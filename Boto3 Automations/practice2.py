@@ -2,7 +2,7 @@
 
 import boto3
 
-aws_console = boto3.session.Session().client('ec2')
+aws_console = boto3.session.Session(profile_name='default')
 
 ec2 = boto3.client('ec2')
 
