@@ -12,7 +12,9 @@ ec2 = boto3.client('ec2')
 # )
 
 #starting an instance
-response = ec2.start_instances(
+#
+# terminating an instance
+response = ec2.terminate_instances(
     InstanceIds = ['string']
 )
 
