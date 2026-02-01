@@ -17,7 +17,8 @@ def lambda_handler(event, context):
     # Iterate through each snapshot and delete if it's not attached to any volume or the volume is not attached to a running instance
     for snapshot in response['Snapshots']:
         snapshot_id = snapshot['SnapshotId']
-        volume_id = snapshot.get('VolumeId')
+        volume_id = snapshot.get('VolumeId') #some snapshots may not be linked to an active volume, so we use .get() method so if VolumeId key is missing, it returns 'none'
+        # snapshot['VolumeId'] returns a keyError if the key is missing
 
         if not volume_id:
             # Delete the snapshot if it's not attached to any volume
