@@ -2,7 +2,7 @@ import requests
 from requests.auth import HTTPBasicAuth
 import json
 
-
+##Jira projects have been named as Spaces, so do not get confused
 url = "https://shreysiswaraj2000.atlassian.net//rest/api/3/project"
 
 # api_token is supposed to be assigned to a variable called API_TOKEN
