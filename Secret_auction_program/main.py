@@ -23,12 +23,17 @@ while not bidding_over:
     name = input("What is your name?")
     price = int(input("What is your bid? $"))
     bids[name] = price
-    ques = input("Is there any other user? Type 'yes' or 'no' ")
-    if ques == "no":
-        bidding_over = True
-        find_highest_bidder(bids)
-    elif ques == "yes":
-        os.system('cls' if os.name == 'nt' else 'clear')
+    while True:
+        ques = input("Is there any other user? Type 'yes' or 'no' ")
+        if ques == "no":
+            bidding_over = True
+            find_highest_bidder(bids)
+            break
+        elif ques == "yes":
+            os.system('cls' if os.name == 'nt' else 'clear')
+            break
+        else :
+            print("Please provide a valid input")
 
 
 
